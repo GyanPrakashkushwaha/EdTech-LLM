@@ -6,6 +6,7 @@
 # protobuf~=3.19.0
 # google-generativeai
 # google-cloud-aiplatform>=1.26.1
-InstructorEmbedding
-
+# InstructorEmbedding
+huggingface_hub
+sentence_transformers
 # -e .

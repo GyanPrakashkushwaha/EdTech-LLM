@@ -1,6 +1,9 @@
 # Ignore Secret File.
 code/secret/
 
+# Don't Save embeddings
+embeddingTransformers/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
