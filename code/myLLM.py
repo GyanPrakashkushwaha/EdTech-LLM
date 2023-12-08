@@ -1,4 +1,4 @@
-from secret.secret import apiKey
+# from secret.secret import apiKey
 from langchain.llms import GooglePalm
 from langchain.document_loaders.csv_loader import CSVLoader
 from langchain.embeddings import HuggingFaceInstructEmbeddings # Embeddings
@@ -6,11 +6,11 @@ from langchain.vectorstores import FAISS # for VectorDB
 from logging_and_exception import logger , CustomException
 import os
 
-chat = GooglePalm(google_api_key=apiKey,temperature=0.8,verbose=True)
+# chat = GooglePalm(google_api_key=apiKey,temperature=0.8,verbose=True)
 
-response = chat("""Act as a PPT creator for fees structure for IITM Bs Degree students.
-                create a professional powerpoint presentation please show the complete fees in different slides
-                for all categories because the main aim is to show the fees of IITM""")
+# response = chat("""Act as a PPT creator for fees structure for IITM Bs Degree students.
+#                 create a professional powerpoint presentation please show the complete fees in different slides
+#                 for all categories because the main aim is to show the fees of IITM""")
 
 # load data
 loader = CSVLoader(file_path=r'DB/data.csv',source_column='prompt')
