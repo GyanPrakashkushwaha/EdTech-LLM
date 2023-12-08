@@ -18,7 +18,7 @@ data = loader.load()
 # print(data)
 # print(response)
 
-try:
+def embed():
     os.makedirs(name='embeddingTransformers',exist_ok=True)
     model_name = "hkunlp/instructor-large"
     model_kwargs = {'device': 'cpu'}
@@ -33,6 +33,14 @@ try:
     vectorDB = FAISS.from_documents(documents=data,embedding=hf)
     vectorDB.save_local(r'DB')
 
+    return (
+        hf,vectorDB
+    )
+    
 
+    
+try:
+    embed()
 except Exception as e:
     raise CustomException(e)
+
