@@ -7,6 +7,7 @@
 # google-generativeai
 # google-cloud-aiplatform>=1.26.1
 # InstructorEmbedding
-huggingface_hub
-sentence_transformers
+# huggingface_hub
+# sentence_transformers
+streamlit
 # -e .

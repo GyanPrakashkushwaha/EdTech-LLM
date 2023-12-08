@@ -9,21 +9,33 @@ load_dotenv()
 
 apiKeyGPalm = os.environ['G_PALM_API']
 
-try:
+def chatLLM():
     gPalm = GooglePalm(google_api_key=apiKeyGPalm,temperature=0.8,verbose=True)
     vectorDB = loadRetriever()
     retriever = vectorDB.as_retriever()
-    obj = retriever.get_relevant_documents('Is this bootcamp enough for me in Microsoft Power BI and Excel certifications?')
+    # obj = retriever.get_relevant_documents('Is this bootcamp enough for me in Microsoft Power BI and Excel certifications?')
     
     chat = RetrievalQA.from_chain_type(llm = gPalm,
                 retriever= retriever,
                 input_key='query',
-                return_source_documents=True)    
+                return_source_documents=True)  
     
-    chat('hello')
-    
+    return chat
     
 
-except Exception as e:
-    CustomException(e)
+# try:
+#     gPalm = GooglePalm(google_api_key=apiKeyGPalm,temperature=0.8,verbose=True)
+#     vectorDB = loadRetriever()
+#     retriever = vectorDB.as_retriever()
+#     obj = retriever.get_relevant_documents('Is this bootcamp enough for me in Microsoft Power BI and Excel certifications?')
+    
+#     chat = RetrievalQA.from_chain_type(llm = gPalm,
+#                 retriever= retriever,
+#                 input_key='query',
+#                 return_source_documents=True)    
+    
+#     print(chat('Hello'))
+
+# except Exception as e:
+#     CustomException(e)
     
